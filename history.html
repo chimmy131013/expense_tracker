@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Expense History</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <header>
+            <h1>📊 Expense History</h1>
+            <p>View your expenses by date, month or year</p>
+        </header>
+
+
+        <!-- Navigation -->
+
+        <div class="history-nav">
+            <a href="index.html">← Add Expenses</a>
+        </div>
+
+
+        <!-- Specific Date -->
+
+        <section class="history-card">
+
+            <h2>📅 Expenses on a Specific Date</h2>
+
+            <div class="filter-row">
+
+                <input
+                    type="date"
+                    id="specificDate"
+                >
+
+                <button id="dateBtn">
+                    View Expenses
+                </button>
+
+            </div>
+
+            <h3 id="dateTitle">
+                Select a date
+            </h3>
+
+            <div id="dateExpenses">
+                <p class="empty-message">
+                    Select a date to see expenses.
+                </p>
+            </div>
+
+        </section>
+
+
+        <!-- Monthly -->
+
+        <section class="history-card">
+
+            <h2>📆 Monthly Expenses</h2>
+
+            <div class="filter-row">
+
+                <input
+                    type="month"
+                    id="monthPicker"
+                >
+
+                <button id="monthBtn">
+                    View Month
+                </button>
+
+            </div>
+
+            <div class="report-total">
+                <span>Monthly Total</span>
+                <strong>
+                    ₹<span id="monthTotal">0</span>
+                </strong>
+            </div>
+
+            <div id="monthExpenses">
+                <p class="empty-message">
+                    Select a month to see expenses.
+                </p>
+            </div>
+
+        </section>
+
+
+        <!-- Yearly -->
+
+        <section class="history-card">
+
+            <h2>📈 Yearly Expenses</h2>
+
+            <div class="filter-row">
+
+                <select id="yearPicker"></select>
+
+                <button id="yearBtn">
+                    View Year
+                </button>
+
+            </div>
+
+            <div class="report-total yearly">
+                <span>Yearly Total</span>
+                <strong>
+                    ₹<span id="yearTotal">0</span>
+                </strong>
+            </div>
+
+            <div id="yearExpenses">
+                <p class="empty-message">
+                    Select a year to see expenses.
+                </p>
+            </div>
+
+        </section>
+
+    </div>
+
+
+    <script src="history.js"></script>
+
+</body>
+
+</html>

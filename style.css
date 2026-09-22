@@ -1,0 +1,934 @@
+/* =====================================================
+   EXPENSE TRACKER - STYLE
+===================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary: #00a884;
+    --primary-dark: #008f73;
+    --background: #f4f7f8;
+    --white: #ffffff;
+    --text: #1f2937;
+    --muted: #6b7280;
+    --border: #e2e8ec;
+    --danger: #e74c3c;
+    --shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+}
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: var(--background);
+    color: var(--text);
+    min-height: 100vh;
+}
+
+
+/* =====================================================
+   MAIN CONTAINER
+===================================================== */
+
+.container {
+    width: 90%;
+    max-width: 850px;
+    margin: 40px auto;
+}
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+header h1 {
+    font-size: 36px;
+    color: var(--text);
+    margin-bottom: 8px;
+}
+
+header p {
+    color: var(--muted);
+    font-size: 16px;
+}
+
+
+/* =====================================================
+   TOTAL BOX
+===================================================== */
+
+.total-box {
+    background: linear-gradient(
+        135deg,
+        #00a884,
+        #0ebfa0
+    );
+
+    color: white;
+
+    padding: 30px;
+
+    border-radius: 18px;
+
+    text-align: center;
+
+    box-shadow: 0 10px 25px rgba(0, 168, 132, 0.25);
+
+    margin-bottom: 25px;
+}
+
+.total-box p {
+    font-size: 16px;
+    opacity: 0.9;
+    margin-bottom: 5px;
+}
+
+.total-box h2 {
+    color: white;
+    font-size: 40px;
+    font-weight: 700;
+}
+
+
+/* =====================================================
+   ADD EXPENSE CARD
+===================================================== */
+
+.expense-form {
+    background: var(--white);
+
+    padding: 28px;
+
+    border-radius: 16px;
+
+    box-shadow: var(--shadow);
+
+    border: 1px solid var(--border);
+
+    margin-bottom: 25px;
+}
+
+.expense-form h2 {
+    font-size: 22px;
+    margin-bottom: 20px;
+}
+
+
+/* =====================================================
+   FORM
+===================================================== */
+
+#expenseForm {
+    display: grid;
+
+    grid-template-columns:
+        1.5fr
+        1fr
+        1fr
+        auto;
+
+    gap: 12px;
+
+    align-items: center;
+}
+
+#expenseForm input,
+#expenseForm select {
+    width: 100%;
+
+    padding: 12px 14px;
+
+    border: 1px solid #d5dde2;
+
+    border-radius: 9px;
+
+    font-size: 14px;
+
+    outline: none;
+
+    background: white;
+
+    transition: 0.2s;
+}
+
+#expenseForm input:focus,
+#expenseForm select:focus {
+    border-color: var(--primary);
+
+    box-shadow:
+        0 0 0 3px
+        rgba(0, 168, 132, 0.1);
+}
+
+
+/* =====================================================
+   ADD BUTTON
+===================================================== */
+
+#expenseForm button {
+    padding: 12px 18px;
+
+    border: none;
+
+    border-radius: 9px;
+
+    background: var(--primary);
+
+    color: white;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    white-space: nowrap;
+
+    transition: 0.25s;
+}
+
+#expenseForm button:hover {
+    background: var(--primary-dark);
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 5px 12px
+        rgba(0, 168, 132, 0.2);
+}
+
+
+/* =====================================================
+   EXPENSE SECTION
+===================================================== */
+
+.expense-section {
+    background: white;
+
+    padding: 28px;
+
+    border-radius: 16px;
+
+    box-shadow: var(--shadow);
+
+    border: 1px solid var(--border);
+}
+
+.expense-section h2 {
+    font-size: 22px;
+
+    margin-bottom: 20px;
+}
+
+
+/* =====================================================
+   EXPENSE ITEM
+===================================================== */
+
+.expense-item {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 16px;
+
+    margin-bottom: 12px;
+
+    background: #f8fafb;
+
+    border: 1px solid var(--border);
+
+    border-radius: 11px;
+
+    transition: 0.2s;
+}
+
+.expense-item:hover {
+    transform: translateX(3px);
+
+    box-shadow:
+        0 5px 12px
+        rgba(0, 0, 0, 0.06);
+}
+
+
+/* =====================================================
+   EXPENSE DETAILS
+===================================================== */
+
+.expense-info {
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+}
+
+.expense-icon {
+    width: 45px;
+
+    height: 45px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: #e6f7f3;
+
+    border-radius: 10px;
+
+    font-size: 22px;
+}
+
+.expense-name {
+    font-weight: 600;
+
+    font-size: 16px;
+
+    margin-bottom: 3px;
+}
+
+.expense-category {
+    color: var(--muted);
+
+    font-size: 13px;
+}
+
+
+/* =====================================================
+   AMOUNT
+===================================================== */
+
+.expense-right {
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+}
+
+.expense-amount {
+    font-size: 17px;
+
+    font-weight: 700;
+
+    color: var(--text);
+}
+
+
+/* =====================================================
+   DELETE BUTTON
+===================================================== */
+
+.delete-btn {
+    border: none;
+
+    background: #fff0ee;
+
+    color: var(--danger);
+
+    padding: 8px 11px;
+
+    border-radius: 7px;
+
+    cursor: pointer;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    transition: 0.2s;
+}
+
+.delete-btn:hover {
+    background: var(--danger);
+
+    color: white;
+}
+
+
+/* =====================================================
+   EMPTY MESSAGE
+===================================================== */
+
+#emptyMessage {
+    text-align: center;
+
+    padding: 35px 10px;
+
+    color: var(--muted);
+
+    font-size: 15px;
+}
+
+
+/* =====================================================
+   RESPONSIVE DESIGN
+===================================================== */
+
+@media (max-width: 750px) {
+
+    .container {
+        width: 92%;
+
+        margin: 25px auto;
+    }
+
+    header h1 {
+        font-size: 30px;
+    }
+
+    #expenseForm {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    #expenseForm input:first-child {
+        grid-column: 1 / -1;
+    }
+
+    #expenseForm button {
+        grid-column: 1 / -1;
+    }
+}
+
+
+@media (max-width: 500px) {
+
+    .container {
+        width: 94%;
+    }
+
+    header h1 {
+        font-size: 27px;
+    }
+
+    .total-box {
+        padding: 25px 15px;
+    }
+
+    .total-box h2 {
+        font-size: 34px;
+    }
+
+    .expense-form,
+    .expense-section {
+        padding: 20px;
+    }
+
+    #expenseForm {
+        grid-template-columns: 1fr;
+    }
+
+    #expenseForm input:first-child,
+    #expenseForm button {
+        grid-column: auto;
+    }
+
+    .expense-item {
+        align-items: flex-start;
+    }
+
+    .expense-right {
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 7px;
+    }
+
+    .expense-info {
+        gap: 10px;
+    }
+
+    .expense-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 19px;
+    }
+}
+/* =====================================================
+   EXPENSE HISTORY PAGE
+===================================================== */
+
+.history-nav {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.history-nav a {
+    display: inline-block;
+    padding: 12px 22px;
+    background: white;
+    color: var(--primary);
+    text-decoration: none;
+    border: 1px solid var(--border);
+    border-radius: 9px;
+    font-weight: 600;
+    box-shadow: var(--shadow);
+    transition: 0.2s;
+}
+
+.history-nav a:hover {
+    background: var(--primary);
+    color: white;
+    transform: translateY(-2px);
+}
+
+
+/* =====================================================
+   HISTORY CARD
+===================================================== */
+
+.history-card {
+    background: white;
+    padding: 28px;
+    margin-bottom: 25px;
+    border-radius: 16px;
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow);
+}
+
+.history-card h2 {
+    font-size: 22px;
+    margin-bottom: 20px;
+}
+
+
+/* =====================================================
+   FILTER
+===================================================== */
+
+.filter-row {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 22px;
+    align-items: center;
+}
+
+.filter-row input,
+.filter-row select {
+    flex: 1;
+    padding: 12px 14px;
+    border: 1px solid #d5dde2;
+    border-radius: 9px;
+    font-size: 15px;
+    outline: none;
+    background: white;
+}
+
+.filter-row input:focus,
+.filter-row select:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(0, 168, 132, 0.1);
+}
+
+.filter-row button {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 9px;
+    background: var(--primary);
+    color: white;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.filter-row button:hover {
+    background: var(--primary-dark);
+    transform: translateY(-2px);
+}
+
+
+/* =====================================================
+   SELECTED DATE TITLE
+===================================================== */
+
+#dateTitle {
+    font-size: 19px;
+    margin: 10px 0 18px;
+    color: var(--text);
+}
+
+
+/* =====================================================
+   MONTHLY / YEARLY TOTAL
+===================================================== */
+
+.report-total {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 22px;
+
+    background: #e9f8f4;
+
+    border-radius: 12px;
+
+    border: 1px solid #d3eee8;
+}
+
+.report-total span {
+    color: var(--muted);
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.report-total strong {
+    color: var(--primary);
+    font-size: 28px;
+}
+
+
+/* YEARLY TOTAL */
+
+.report-total.yearly {
+    background: #eef6ff;
+    border-color: #d9e9fa;
+}
+
+.report-total.yearly strong {
+    color: #2878c8;
+}
+
+
+/* =====================================================
+   DATE EXPENSE
+===================================================== */
+
+.history-expense {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 16px;
+
+    margin-bottom: 12px;
+
+    background: #f8fafb;
+
+    border: 1px solid var(--border);
+
+    border-radius: 11px;
+
+    transition: 0.2s;
+}
+
+.history-expense:hover {
+    transform: translateX(3px);
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.06);
+}
+
+
+/* =====================================================
+   DATE EXPENSE LEFT SIDE
+===================================================== */
+
+.history-expense-left {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+
+/* =====================================================
+   ICON
+===================================================== */
+
+.history-icon {
+    width: 45px;
+    height: 45px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #e6f7f3;
+
+    border-radius: 10px;
+
+    font-size: 22px;
+}
+
+
+/* =====================================================
+   NAME
+===================================================== */
+
+.history-name {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+
+/* =====================================================
+   CATEGORY + DATE
+===================================================== */
+
+.history-category {
+    color: var(--muted);
+    font-size: 13px;
+}
+
+
+/* =====================================================
+   AMOUNT
+===================================================== */
+
+.history-amount {
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--text);
+}
+
+
+/* =====================================================
+   EMPTY MESSAGE
+===================================================== */
+
+.empty-message {
+    text-align: center;
+    color: var(--muted);
+    padding: 30px 10px;
+    font-size: 15px;
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 600px) {
+
+    .history-card {
+        padding: 20px;
+    }
+
+    .filter-row {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .filter-row input,
+    .filter-row select,
+    .filter-row button {
+        width: 100%;
+    }
+
+    .report-total {
+        padding: 18px;
+    }
+
+    .report-total strong {
+        font-size: 24px;
+    }
+
+    .history-expense {
+        padding: 13px;
+    }
+
+    .history-expense-left {
+        gap: 10px;
+    }
+
+    .history-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 19px;
+    }
+
+    .history-name {
+        font-size: 15px;
+    }
+
+    .history-amount {
+        font-size: 15px;
+    }
+}
+
+/* =====================================================
+   LOGIN PAGE
+===================================================== */
+
+.login-container {
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 25px;
+}
+
+.login-card {
+    width: 100%;
+    max-width: 420px;
+
+    background: white;
+
+    padding: 40px;
+
+    border-radius: 18px;
+
+    border: 1px solid var(--border);
+
+    box-shadow: var(--shadow);
+
+    text-align: center;
+}
+
+.login-icon {
+    width: 70px;
+    height: 70px;
+
+    margin: 0 auto 18px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #e6f7f3;
+
+    border-radius: 50%;
+
+    font-size: 34px;
+}
+
+.login-card h1 {
+    font-size: 28px;
+    margin-bottom: 8px;
+}
+
+.login-subtitle {
+    color: var(--muted);
+    font-size: 14px;
+    margin-bottom: 30px;
+}
+
+
+/* INPUTS */
+
+.input-group {
+    text-align: left;
+    margin-bottom: 18px;
+}
+
+.input-group label {
+    display: block;
+
+    margin-bottom: 7px;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    color: var(--text);
+}
+
+.input-group input {
+    width: 100%;
+
+    padding: 13px 14px;
+
+    border: 1px solid #d5dde2;
+
+    border-radius: 9px;
+
+    font-size: 14px;
+
+    outline: none;
+
+    transition: 0.2s;
+}
+
+.input-group input:focus {
+    border-color: var(--primary);
+
+    box-shadow:
+        0 0 0 3px
+        rgba(0, 168, 132, 0.1);
+}
+
+
+/* LOGIN BUTTON */
+
+.login-btn {
+    width: 100%;
+
+    padding: 13px;
+
+    margin-top: 5px;
+
+    border: none;
+
+    border-radius: 9px;
+
+    background: var(--primary);
+
+    color: white;
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.login-btn:hover {
+    background: var(--primary-dark);
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 5px 12px
+        rgba(0, 168, 132, 0.2);
+}
+
+
+/* REGISTER LINK */
+
+.register-text {
+    margin-top: 25px;
+
+    color: var(--muted);
+
+    font-size: 14px;
+}
+
+.register-text a {
+    color: var(--primary);
+
+    text-decoration: none;
+
+    font-weight: 600;
+}
+
+.register-text a:hover {
+    text-decoration: underline;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 500px) {
+
+    .login-card {
+        padding: 30px 22px;
+    }
+
+    .login-card h1 {
+        font-size: 25px;
+    }
+}
