@@ -20,25 +20,7 @@ jobs:
           echo "$EC2_SSH_KEY_B64" | base64 -d > expense_tracker_key.pem
           chmod 600 expense_tracker_key.pem
 
-          ssh -o StrictHostKeyChecking=no \
-            -i expense_tracker_key.pem \
-            ubuntu@3.108.154.68 << 'EOF'
-            
-            cd ~/expense_tracker
-            git pull origin main
-
-            docker stop expense_tracker || true
-            docker rm expense_tracker || true
-
-            docker build -t expense_tracker .
-
-            docker run -d \
-              --restart unless-stopped \
-              -p 80:80 \
-              --name expense_tracker \
-              expense_tracker
-
-          EOF
+          ssh -o StrictHostKeyChecking=no -i expense_tracker_key.pem ubuntu@3.108.154.68 "cd ~/expense_tracker && git pull origin main && docker stop expense_tracker || true; docker rm expense_tracker || true; docker build -t expense_tracker . && docker run -d --restart unless-stopped -p 80:80 --name expense_tracker expense_tracker"
 
           rm -f expense_tracker_key.pem
 
